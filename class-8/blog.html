@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        /* Add CSS for body and sections here */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 17px;
+            margin-top: 70px;
+        }
+
+        .first-section{
+            color :rgb(118, 49, 182);
+            background-color: rgb(226, 240, 240);
+            width :400px;
+            text-align:justify;
+            border : 4px solid rgba(223, 193, 148, 0.966);
+            padding : 15px;
+        }
+        .second-section{
+            color:rgb(48, 108, 165);
+            background-color: rgb(241, 230, 241);
+            width:400px;
+            text-align :justify;
+            border:4px solid rgba(223, 193, 148, 0.966);
+            padding :15px;
+            
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <div class="first-section">
+                <h1>First Title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod magnam commodi, ad illum officia rem quis tempore. Cumque quod rerum cum tempora tenetur provident totam hic modi, obcaecati molestias, numquam, voluptatem sequi cupiditate quo quos nobis architecto! Quidem, libero animi.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="second-section">
+                <h1>Second Title</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non laboriosam id eveniet aliquam debitis unde exercitationem dolorum voluptas sequi laudantium aut a voluptatibus quibusdam reprehenderit, minus tempore aperiam quas dolores voluptate ab esse ipsam? Dolor.</p>
+            </div>
+        </section>
+    </div>
+    
+
+
+    <script>
+        //parent div class remove & add
+        var container = document.querySelector(".container");
+        container.classList.remove("container");
+        container.classList.add('main');
+
+        var main = document.querySelectorAll(".main")
+        for(let item of main){
+        item.style.display = 'flex';
+        item.style.gap = "17px";
+        item.style.marginTop = "70px"; 
+        item.style.justifyContent = "center";
+        }
