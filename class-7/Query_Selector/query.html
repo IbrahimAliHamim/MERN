@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 70px;
+            margin: 70px auto 0 auto;
+        }
+
+        .first-section{
+            height: 200px;
+            width: 380px;
+            border : 4px solid rgb(124, 224, 216);
+            padding : 15px;
+        }
+
+        .second-section{
+            height: 200px;
+            width: 380px;
+            justify-content: center;
+            border : 4px solid rgb(152, 33, 189);
+            padding : 15px;
+        }
+    </style>
+
+    <title>Query Selector</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="first-section">
+            <h1>Sample Heading</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus accusantium doloribus beatae, eius minima suscipit omnis quibusdam temporibus reprehenderit fugit nesciunt quaerat nemo laudantium culpa, dolor deleniti maiores obcaecati dolorum distinctio, enim autem! Eos, iste.
+            </p>
+        </div>
+        <div class="second-section">
+            <h1>Sample Heading</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus accusantium doloribus beatae, eius minima suscipit omnis quibusdam temporibus reprehenderit fugit nesciunt quaerat nemo laudantium culpa, dolor deleniti maiores obcaecati dolorum distinctio, enim autem! Eos, iste.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        var container = document.querySelector(".container");
+        container.classList.remove("container");
+        container.classList.add("main");
+
+        let main = document.querySelectorAll(".main");
+        for(let item of main){
+            item.style.display = 'flex';
+            item.style.marginTop = '50px';
+            item.style.justifyContent = 'center';
+            item.style.gap = "17px";
+        }
+
+        // mainElements.forEach(function(elements){
+        //     item.style.display = 'flex';
+        //     item.style.justifyContent = 'center';
+        //     item.style.gap = "17px";
+        // })
+
+    </script>
+    
+</body>
+</html>
