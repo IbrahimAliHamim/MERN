@@ -1,4 +1,3 @@
-
 const depositButton = document.getElementById('diposit');
 depositButton.addEventListener('click', function () {
     // Get deposit input value
@@ -54,6 +53,16 @@ withdrawButton.addEventListener('click', function () {
     const currentWithdrawal = document.getElementById('withdrawMain');
     const currentWithdrawalAmount = parseFloat(currentWithdrawal.innerText);
 
+    // Check if the withdrawal amount exceeds the total balance
+    const totalBalance = document.getElementById('totalValue');
+    const totalBalanceAmount = parseFloat(totalBalance.innerText);
+
+    if (withdrawAmount > totalBalanceAmount) {
+        alert("Not enough balance.");
+        withdrawInput.value = '';
+        return;
+    }
+
     // Calculate new withdrawal total
     const newWithdrawalTotal = currentWithdrawalAmount + withdrawAmount;
 
@@ -61,13 +70,7 @@ withdrawButton.addEventListener('click', function () {
     currentWithdrawal.innerText = newWithdrawalTotal.toFixed(2);
 
     // Update the total balance
-    const totalBalance = document.getElementById('totalValue');
-    const totalBalanceAmount = parseFloat(totalBalance.innerText);
-    
-    // Ensure the total doesn't go below 0
-    const newTotalBalance = Math.max(totalBalanceAmount - withdrawAmount, 0);
-    
-    // Update the total balance
+    const newTotalBalance = totalBalanceAmount - withdrawAmount;
     totalBalance.innerText = newTotalBalance.toFixed(2);
 
     // Check for alert conditions (total less than 5)
@@ -78,4 +81,3 @@ withdrawButton.addEventListener('click', function () {
     // Clear the input field
     withdrawInput.value = '';
 });
-
